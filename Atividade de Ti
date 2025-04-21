@@ -1,0 +1,53 @@
+package joptionspaneex;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author massa
+ */
+public class JOptionsPaneEX {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        //pega o nome e CPF da pessoa
+        String nome = JOptionPane.showInputDialog("Digite seu nome:");
+        String cpf = JOptionPane.showInputDialog("Digite seu CPF:");
+
+        // mostra o que foi digitado
+        JOptionPane.showMessageDialog(null, "Seu nome é: " + nome + "\nSeu CPF é: " + cpf);
+
+        //mostrar 8 janelas
+        int contador = 1;
+        while (contador <= 8) {
+            JOptionPane.showMessageDialog(null, "Essa é a janela número: " + contador);
+            contador = contador + 1; // ou contador++
+        }
+
+        //escolher uma opção
+        String opcao = JOptionPane.showInputDialog("Escolha uma opção:\n1 - Dizer oi\n2 - Mostrar dados\n3 - Sair");
+
+        //se a pessoa escolher 1
+        if (opcao.equals("1")) {
+            JOptionPane.showMessageDialog(null, "Oi, " + nome + "! Tudo bem?");
+        }
+
+        //se a pessoa escolher 2
+        else if (opcao.equals("2")) {
+            JOptionPane.showMessageDialog(null, "Seus dados são:\nNome: " + nome + "\nCPF: " + cpf);
+        }
+
+        //se a pessoa escolher 3
+        else if (opcao.equals("3")) {
+            JOptionPane.showMessageDialog(null, "Flw até a próxima!");
+        }
+
+        //se a pessoa digitar algo errado
+        else {
+            JOptionPane.showMessageDialog(null, "Opção inválida. Tente de novo.");
+        }
+    }
+}
